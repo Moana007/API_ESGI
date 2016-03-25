@@ -1,3 +1,5 @@
+//models/categories.js
+
 module.exports = function(server){
   var CategorySchema = server.mongoose.Schema({
     label: {
