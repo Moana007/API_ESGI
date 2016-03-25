@@ -7,7 +7,7 @@ module.exports = function(server){
     //server.middlewares.cache.get,
     server.actions.eventes.get
   );
-  //renvoi les events soit 'past' soit 'futur'
+  //renvoi un event
   router.get('/:id',
     server.actions.eventes.show
   );
