@@ -3,6 +3,7 @@ module.exports = function(server){
     eventes: require('./eventes')(server),
     users: require('./users')(server),
     auth : require('./auth')(server),
-    categories : require('./categories')(server)
+    categories : require('./categories')(server),
+    register : require('./register')(server)
   };
 };

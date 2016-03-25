@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 
 module.exports = function(server){
   return function(req, res, next){
+    console.log('in ensureAuthenticated');
     var Token = server.models.Token;
     var token = req.headers.authorization;
     if (!token)
