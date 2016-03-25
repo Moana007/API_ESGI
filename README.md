@@ -2,7 +2,7 @@
 
 Projet Node.js créé le 25 mars 2016.
 
-Ce projet consiste en la création d'une applkication permettant de gérer un portail évènementiel.
+Ce projet consiste en la création d'une application permettant de gérer un portail évènementiel.
 
 Développeurs (groupe 3) : 
 - LEGAIE Guillaume
