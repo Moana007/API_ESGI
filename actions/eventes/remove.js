@@ -7,7 +7,7 @@ module.exports = function(server) {
 
       //res.cached.send(data);
       res.send({
-        state : 'remove_user',
+        state : 'remove_eventes',
         user : data
       });
     });

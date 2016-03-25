@@ -9,7 +9,7 @@ module.exports = function(server){
             required: true
         },
         date: {
-            type: Date,
+            type: String,
             required: true
         },
         lieu: {
@@ -24,17 +24,17 @@ module.exports = function(server){
         categoryID: {
             type: server.mongoose.Schema.Types.ObjectId,
             ref: 'Category',
-            required: true
+            required: false
         },
         organizerID: {
             type: server.mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            required: true
+            required: false
         },
         listParticipantsID: [{
             type: server.mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            required: true
+            required: false
         }]
     });
 

@@ -8,10 +8,9 @@ module.exports = function(server){
         return res.status(500).send(err);
 
       res.send({
-        state : 'show_user',
+        state : 'show_evente',
         user : data
       });
-      
     });
   };
 };

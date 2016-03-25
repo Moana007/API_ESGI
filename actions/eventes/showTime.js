@@ -2,27 +2,42 @@ module.exports =  function(server){
   return function(req, res, next){
     var Evente = server.models.Evente;
     var time = req.params.time;
-    var dateNow = new Date();
-    var dateNow2 = dateNow.getTime();
-    //var query = Evente.find();
+    var dateNow = new Date().getTime();
+    var query = Evente.find();
 
-    console.log(dateNow2);
+    //console.log(dateNow);
 
-    if(time != 'past' || time != 'future'){
+    if(time == 'past' || time == 'future'){
 		if (time == 'past'){
-		//Evente.findBy( date: >= dateNow, (function(err, data){
-		Evente.find(function(err, data){
-		      	if(err)
-		        	return res.status(500).send(err);
+		    query
+			    .where('date').lt(dateNow)
+			    .exec(function(err, data){
+				    if(err)
+				        return res.status(500).send(err);
 
-		        console.log(data.date);
+			        console.log(data[0].date);
 
-	            return res.send({
-	              	state : 'get_event '+time,
-	              	user : data
-	            });
-		    });
-    	}
+			        return res.send({
+			          	state : 'get_event_'+time,
+			          	user : data
+			        });
+			    });
+		}
+		else {
+		    query
+			    .where('date').gt(dateNow)
+			    .exec(function(err, data){
+				    if(err)
+				        return res.status(500).send(err);
+
+			        console.log(data[0].date);
+
+			        return res.send({
+			          	state : 'get_event_'+time,
+			          	user : data
+			        });
+			    });
+		}
 
     } else {
     	return res.send('The last param need to be "past" or "future"');

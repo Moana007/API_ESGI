@@ -18,9 +18,9 @@ module.exports = function(server){
   );
 
   //envoi les event d'un utilisteur
-  // router.get('/user/:id/',
-  //   server.actions.eventes.show
-  // );
+  router.get('/user/:id/',
+    server.actions.eventes.show
+  );
   // //envoi les event orgnisé et ou je participe past ou futur
   // router.get('/me/:time',
   //   server.actions.eventes.show
@@ -31,7 +31,7 @@ module.exports = function(server){
   router.post('/',
     server.middlewares.ensureAuthenticated,
     server.middlewares.bodyparser,
-    server.middlewares.ensureBodyFields('name'),
+    server.middlewares.ensureBodyFields('titre'),
     server.actions.eventes.create
   );
 

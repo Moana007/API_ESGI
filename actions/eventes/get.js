@@ -7,7 +7,7 @@ module.exports =  function(server){
       if(err)
         return res.status(500).send(err);
             res.send({
-              state : 'get_user',
+              state : 'get_eventes',
               user : data
             });
 
